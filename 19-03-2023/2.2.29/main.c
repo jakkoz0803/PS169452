@@ -1,20 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int dzielnik(int a, int b)
+int dzielnik(int n, int m)
 {
-    while(a != b)
+    if(n == m)
     {
-        if(a > b)
-        {
-            a -= b;
-        }
-        else
-        {
-            b -= a;
-        }
+        return n;
     }
-    return a;
+    if(n > m)
+    {
+        return dzielnik(m, n - m);
+    }
+    return dzielnik(n, m - n);
 }
 
 int main()
