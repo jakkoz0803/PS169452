@@ -30,13 +30,18 @@ void sklej(char *nap1, char *nap2, char *nap3)
     nap3[i] = 0;
 }
 
-void wytnij(char *nap, int n, int m)
+void wytnij(char *nap, int n, int m) // funkcja z gotowego rozwiazania na stronie (nie dziala xd)
 {
     int i, dl;
-    for(dl = 0; < m; i++)
-    {
-        nap -= nap[i];
-    }
+    for(dl = 0; nap[dl] != 0; dl++)
+        if(dl+1 > m)
+        {
+            for(i = 0; i+m < dl; i++)
+                nap[n+i] = nap[i+m+1];
+        }
+        else
+            if((n<dl)&&(dl+1<=m))
+                nap[n] = 0;
 }
 
 int main()
